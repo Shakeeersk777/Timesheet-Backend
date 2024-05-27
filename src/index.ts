@@ -14,7 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Define your routes
 router.intializeRoutes();
-
+app.get("/health_check",async (req:any, res: any) => {
+  res.status(200).json({"message":"ok"})
+})
 // Use the router object to handle routes
 app.use("/", router.router);
 
